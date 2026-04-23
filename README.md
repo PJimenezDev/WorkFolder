@@ -20,7 +20,6 @@ WorkFolder es una plataforma de gestión documental orientada a la máxima segur
 
 ## 📂 Estructura del Proyecto
 
-\`\`\`text
 workfolder/
 ├── apps/
 │   ├── frontend/       # Aplicación Next.js (UI y BFF)
@@ -30,7 +29,6 @@ workfolder/
 ├── .env.example        # Plantilla de variables de entorno
 ├── .gitignore          # Archivos ignorados por Git
 └── package.json        # Configuración del workspace y scripts globales
-\`\`\`
 
 ## 🚀 Instalación y Uso Local
 
