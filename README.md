@@ -20,15 +20,15 @@ WorkFolder es una plataforma de gestión documental orientada a la máxima segur
 
 ## 📂 Estructura del Proyecto
 
-workfolder/
-├── apps/
-│   ├── frontend/       # Aplicación Next.js (UI y BFF)
-│   └── backend/        # Microservicio Express (Lógica de negocio, Cifrado, DB)
-├── packages/
-│   └── types/          # Interfaces de TypeScript compartidas (@workfolder/types)
-├── .env.example        # Plantilla de variables de entorno
-├── .gitignore          # Archivos ignorados por Git
-└── package.json        # Configuración del workspace y scripts globales
+- **`workfolder/`** (Raíz del monorepo)
+  - **`apps/`**
+    - `frontend/` — Aplicación Next.js (UI y BFF)
+    - `backend/` — Microservicio Express (Lógica de negocio, Cifrado, DB)
+  - **`packages/`**
+    - `types/` — Interfaces de TypeScript compartidas (`@workfolder/types`)
+  - `.env.example` — Plantilla de variables de entorno
+  - `.gitignore` — Archivos ignorados por Git
+  - `package.json` — Configuración del workspace y scripts globales
 
 ## 🚀 Instalación y Uso Local
 
