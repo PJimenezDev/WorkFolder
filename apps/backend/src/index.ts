@@ -12,8 +12,8 @@ const server = app.listen(env.PORT, () => {
 ╔══════════════════════════════════════════════════════════╗
 ║              WorkFolder Backend — API REST               ║
 ╠══════════════════════════════════════════════════════════╣
-║  Entorno  : ${env.NODE_ENV.padEnd(44)}║
-║  Puerto   : ${String(env.PORT).padEnd(44)}║
+║  Entorno  : ${env.NODE_ENV.padEnd(44)} ║
+║  Puerto   : ${String(env.PORT).padEnd(44)} ║
 ║  Health   : http://localhost:${env.PORT}/health${" ".repeat(17)}║
 ╠══════════════════════════════════════════════════════════╣
 ║  Endpoints disponibles:                                  ║
