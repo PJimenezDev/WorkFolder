@@ -7,6 +7,7 @@ import { env } from "./config/env.js";
 
 const app = createApp();
 
+// ─── Iniciar el servidor ───────────────────────────────────────────────────────
 const server = app.listen(env.PORT, () => {
   console.log(`
 ╔══════════════════════════════════════════════════════════╗
