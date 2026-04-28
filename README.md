@@ -20,17 +20,15 @@ WorkFolder es una plataforma de gestión documental orientada a la máxima segur
 
 ## 📂 Estructura del Proyecto
 
-\`\`\`text
-workfolder/
-├── apps/
-│   ├── frontend/       # Aplicación Next.js (UI y BFF)
-│   └── backend/        # Microservicio Express (Lógica de negocio, Cifrado, DB)
-├── packages/
-│   └── types/          # Interfaces de TypeScript compartidas (@workfolder/types)
-├── .env.example        # Plantilla de variables de entorno
-├── .gitignore          # Archivos ignorados por Git
-└── package.json        # Configuración del workspace y scripts globales
-\`\`\`
+- **`workfolder/`** (Raíz del monorepo)
+  - **`apps/`**
+    - `frontend/` — Aplicación Next.js (UI y BFF)
+    - `backend/` — Microservicio Express (Lógica de negocio, Cifrado, DB)
+  - **`packages/`**
+    - `types/` — Interfaces de TypeScript compartidas (`@workfolder/types`)
+  - `.env.example` — Plantilla de variables de entorno
+  - `.gitignore` — Archivos ignorados por Git
+  - `package.json` — Configuración del workspace y scripts globales
 
 ## 🚀 Instalación y Uso Local
 
@@ -44,25 +42,7 @@ Ejecuta el siguiente comando en la raíz del proyecto para instalar las dependen
 npm install
 \`\`\`
 
-### 3. Variables de Entorno
-Crea un archivo `.env` en la raíz del proyecto (puedes basarte en `.env.example`).
-Para el desarrollo inicial local usando el **Stub de memoria**, solo necesitas:
-
-\`\`\`env
-# Frontend
-NEXT_PUBLIC_BACKEND_URL=http://localhost:3000/api/proxy
-
-# Backend
-PORT=3001
-NODE_ENV=development
-ALLOWED_ORIGINS=http://localhost:3000
-
-# Supabase (Dejar vacío o con placeholders para usar el Stub local)
-SUPABASE_URL=""
-SUPABASE_ANON_KEY=""
-\`\`\`
-
-### 4. Levantar el entorno de desarrollo
+### 3. Levantar el entorno de desarrollo
 Inicia tanto el Frontend como el Backend simultáneamente con un solo comando desde la raíz:
 \`\`\`bash
 npm run dev
@@ -72,6 +52,3 @@ npm run dev
 - **Backend (Express):** http://localhost:3001
 - **Healthcheck Backend:** http://localhost:3001/health
 - **Test BFF Proxy:** http://localhost:3000/api/proxy/health
-
----
-*Desarrollado con ❤️ para garantizar la privacidad y seguridad documental.*
