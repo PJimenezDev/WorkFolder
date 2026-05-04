@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+// Hook personalizado para manejar la lógica de login
 export const useLogin = () => {
   const [loading, setLoading] = useState(false);
 
