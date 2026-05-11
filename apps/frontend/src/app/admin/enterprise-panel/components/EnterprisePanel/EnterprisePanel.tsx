@@ -74,8 +74,8 @@ function HomeSection() {
         <div className="card-header">
           <div>
             <h3 className="card-title">📋 Gestión de Módulo RRHH</h3>
-            <p style={{ color: '#4a5568', fontSize: 13, margin: '8px 0 0' }}>Receptores RRHH Activos: 3 de 3 (Cupo completo)</p>
-            <p style={{ color: '#2d3748', fontSize: 12, margin: '4px 0 0' }}>¿Necesitas más receptores? Agrega por US$4 + IVA cada uno.</p>
+            <p className="text-muted mt-8">Receptores RRHH Activos: 3 de 3 (Cupo completo)</p>
+            <p className="text-dim mt-4">¿Necesitas más receptores? Agrega por US$4 + IVA cada uno.</p>
           </div>
           <button className="btn-primary-large">Agregar Receptor</button>
         </div>
@@ -96,7 +96,7 @@ function UsuariosSection() {
       <SectionTitle>Usuarios Corp</SectionTitle>
       <Card>
         <div className="card-header">
-          <p style={{ color: '#4a5568', fontSize: 13, margin: 0 }}>5 de 5 usuarios activos (plan completo)</p>
+          <p className="text-muted">5 de 5 usuarios activos (plan completo)</p>
           <button className="btn-primary">+ Nuevo Usuario</button>
         </div>
         <table className="data-table">
@@ -108,8 +108,8 @@ function UsuariosSection() {
           <tbody>
             {CORP_USERS.map((u, i) => (
               <tr key={i}>
-                <td style={{ color: '#fff', fontWeight: 600 }}>{u.name}</td>
-                <td style={{ color: '#4a5568' }}>{u.email}</td>
+                <td className="td-white">{u.name}</td>
+                <td className="td-muted">{u.email}</td>
                 <td><span className={`chip ${u.role === 'Administrador' ? 'blue' : ''}`}>{u.role}</span></td>
                 <td><span className={`chip ${u.status === 'activo' ? 'green' : ''}`}>{u.status}</span></td>
                 <td><button className="btn-ghost">Editar</button></td>
@@ -165,15 +165,11 @@ function SeguridadSection() {
         <Stat label="Último Scan"  value="Hoy 09:00" sub="Sin amenazas" />
       </div>
       <Card>
-        <h3 className="card-title" style={{ marginBottom: 16 }}>Configuración de Seguridad Activa</h3>
+        <h3 className="card-title card-title-mb">Configuración de Seguridad Activa</h3>
         {SECURITY_CHECKS.map((item, i) => (
           <div key={i} className="check-row">
-            <span style={{ color: item.status ? '#22c55e' : '#374151', fontSize: 16 }}>
-              {item.status ? '✓' : '○'}
-            </span>
-            <span style={{ color: item.status ? '#cbd5e0' : '#374151', fontSize: 13 }}>
-              {item.label}
-            </span>
+            <span className={item.status ? 'check-ok' : 'check-off'}>{item.status ? '✓' : '○'}</span>
+            <span className={item.status ? 'check-label-ok' : 'check-label-off'}>{item.label}</span>
           </div>
         ))}
       </Card>
@@ -220,12 +216,12 @@ function FacturacionSection() {
         <Stat label="Usuarios Pagados" value="5"          sub="$29/usuario/mes" />
       </div>
       <Card>
-        <h3 className="card-title" style={{ marginBottom: 16 }}>Historial de Facturas</h3>
+        <h3 className="card-title card-title-mb">Historial de Facturas</h3>
         {INVOICES.map((f, i) => (
           <div key={i} className="item-row">
-            <span style={{ color: '#cbd5e0', fontSize: 13 }}>📄 {f.mes}</span>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-              <span style={{ color: '#fff', fontWeight: 700, fontSize: 14 }}>{f.monto}</span>
+            <span className="invoice-mes">📄 {f.mes}</span>
+            <div className="invoice-right">
+              <span className="invoice-monto">{f.monto}</span>
               <span className="chip green">{f.estado}</span>
               <button className="btn-ghost">PDF</button>
             </div>
@@ -268,7 +264,7 @@ function RRHHSection() {
   );
 }
 
-// ── Componente principal ─────────────────────────────────────────
+// ── Mapa de secciones ────────────────────────────────────────────
 const SECTION_MAP: Record<AdminSection, React.ReactNode> = {
   home:        <HomeSection />,
   usuarios:    <UsuariosSection />,
@@ -279,10 +275,11 @@ const SECTION_MAP: Record<AdminSection, React.ReactNode> = {
   facturacion: <FacturacionSection />,
 };
 
+// ── Componente principal ─────────────────────────────────────────
 export default function EnterprisePanel({ section }: Props) {
   return (
     <main className="panel-main">
-      <style jsx>{panelStyles}</style>
+      <style jsx global>{panelStyles}</style>
       {SECTION_MAP[section]}
     </main>
   );
