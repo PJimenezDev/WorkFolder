@@ -41,6 +41,7 @@ export const setAccessToken = (token: string) => {
   }
 };
 
+// ── Obtener token para incluir en headers de fetch ───────────────
 export const getAccessToken = (): string => {
   if (typeof window !== 'undefined') {
     return sessionStorage.getItem(TOKEN_KEY) ?? '';
@@ -48,6 +49,7 @@ export const getAccessToken = (): string => {
   return '';
 };
 
+// ── Limpiar token al hacer logout ───────────────────────────────
 export const clearAccessToken = () => {
   if (typeof window !== 'undefined') {
     sessionStorage.removeItem(TOKEN_KEY);
