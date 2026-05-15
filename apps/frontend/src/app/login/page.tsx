@@ -78,7 +78,9 @@ export default function LoginPage() {
               </button>
             </form>
 
-            <a href="#" className="forgot-link">¿Olvidaste tu contraseña?</a>
+            <a href="/auth/forgot-password" className="forgot-link">
+              ¿Olvidaste tu contraseña?
+            </a>
           </div>
         </div>
       </main>
